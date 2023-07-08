@@ -6,50 +6,31 @@ import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
     {
-        title: 'Overview',
-        path: '/overview',
-        icon: <AiIcons.AiFillHome />,
-        iconClosed: <RiIcons.RiArrowDownSFill />,
-        iconOpen: <RiIcons.RiArrowUpSFill />,
-        subNav: [
-            {
-                title: 'Users',
-                path: '/overview/users',
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: 'Revenue',
-                path: '/overview/revenue',
-                icon: <IoIcons.IoIosPaper />,
-            },
-        ]
+        title: 'à propos de moi',
+        path: '/about-me',
     },
     {
-        title: 'Test',
-        path: '/test',
-        icon: <AiIcons.AiFillHome />,
-        iconClosed: <RiIcons.RiArrowDownSFill />,
-        iconOpen: <RiIcons.RiArrowUpSFill />,
+        title: 'contact',
+        path: '/contact',
     },
     {
-    title: 'Works',
-    path: '/works',
-    icon: <AiIcons.AiFillPicture />,
+    title: 'travaux',
+    path: '/work',
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpen: <RiIcons.RiArrowUpSFill />,
     subNav: [
         {
-            title: 'Work 1',
+            title: '80Cipper',
             path: '/works/works1',
             icon: <IoIcons.IoMdPhotos />,
         },
         {
-            title: 'Work 2',
+            title: 'Adidas',
             path: '/works/works2',
             icon: <IoIcons.IoMdPhotos />,
         },
         {
-            title: 'Work 3',
+            title: 'Nike',
             path: '/works/works3',
             icon: <IoIcons.IoMdPhotos />,
         },
