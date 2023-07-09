@@ -6,9 +6,9 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
+import NavbarHeader from './NavbarHeader';
 
 const Nav = styled.div`
-  background: #353b3c;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -16,33 +16,39 @@ const Nav = styled.div`
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: 2rem;
+  margin-left: auto; /* Added margin-left: auto to push the icon to the right */
+  margin-right: 1rem; /* Added margin-right: 1rem to move the icon slightly to the left */
   font-size: 2rem;
   height: 80px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   visibility: ${({ sidebar }) => (sidebar ? 'hidden' : 'visible')};
 `;
 
+
+
 const SidebarNav = styled.nav`
   background: #353b3c;
   width: 250px;
-  height: 100vh;
+  height: calc(100vh - 80px); /* Subtract 80px from the height */
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 0;
+  top: 80px; /* Updated to 80px */
   left: ${({ sidebar }) => (sidebar ? '0' : '-250px')};
   transition: left 0.3s ease-in-out;
   z-index: 10;
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    top: 0px;
+    height: 100%;
     left: ${({ sidebar, shouldCloseSidebar }) =>
-      sidebar && !shouldCloseSidebar ? '0' : '-100%'};
+      sidebar && !shouldCloseSidebar ? '0' : '100%'};
   }
 `;
+
 
 const SidebarWrap = styled.div`
   width: 100%;
@@ -88,8 +94,9 @@ const Sidebar = () => {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
+            <NavbarHeader name="Simon" /> {/* Add NavbarHeader component here */}
           <NavIcon to="#" sidebar={sidebar}>
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars onClick={showSidebar} style={{ color: 'grey' }} />
           </NavIcon>
         </Nav>
         <SidebarNav sidebar={sidebar || windowWidth > 768} shouldCloseSidebar={shouldCloseSidebar}>

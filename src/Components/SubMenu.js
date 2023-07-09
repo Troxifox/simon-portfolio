@@ -33,12 +33,13 @@ const DropdownLink = styled(Link)`
   color: #f5f5f5;
   font-size: 17px;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out; /* Added transition for opacity and color */
 
   &:hover {
-    background: #717171;
+    color: #717171;
   }
 `;
+
 
 const SubMenu = ({ item }) => {
   const [subnav, setSubnav] = useState(false);

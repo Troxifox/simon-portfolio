@@ -2,7 +2,7 @@ import './App.css';
 import Sidebar from './Components/Sidebar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Overview from './pages/Overview';
-import {Work , WorkTwo, WorkThree} from './pages/Work'
+import { Work, WorkTwo, WorkThree } from './pages/Work';
 
 function App() {
   return (

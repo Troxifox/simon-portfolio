@@ -51,7 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
     transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
     visibility: hidden;
     opacity: 0;
@@ -67,8 +67,8 @@
   }
   
   .model img {
-    width: auto;
-    max-width: 100%;
+    width: 100vh;
+    max-width: 70%;
     height: auto;
     max-height: 100%;
     display: block;
@@ -82,7 +82,7 @@
     position: fixed;
     top: 10px;
     right: 10px;
-    width: 1rem;
+    width: 2rem;
     height: 2rem;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.4);
