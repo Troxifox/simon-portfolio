@@ -22,17 +22,14 @@ export const SidebarData = [
         {
             title: '80Cipper',
             path: '/works/works1',
-            icon: <IoIcons.IoMdPhotos />,
         },
         {
             title: 'Adidas',
             path: '/works/works2',
-            icon: <IoIcons.IoMdPhotos />,
         },
         {
             title: 'Nike',
             path: '/works/works3',
-            icon: <IoIcons.IoMdPhotos />,
         },
     ]
 },

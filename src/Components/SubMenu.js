@@ -1,42 +1,58 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import InconsolataFont from '../font/Inconsolata-Light.ttf';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Inconsolata';
+    src: url(${InconsolataFont}) format('truetype');
+  }
+
+  body {
+    margin: 0;
+  }
+`;
 
 const SidebarLink = styled(Link)`
   display: flex;
-  color: #e1e9fc;
+  color: #616161;
   justify-content: space-between;
+  margin-left: 2rem;
   align-items: center;
-  padding: 20px;
+  padding: ${({ hasSubMenu }) => (hasSubMenu ? '2em 0.5em 1em 0.5em' : '0.5em')}; /* Add top padding if hasSubMenu is true */
   list-style: none;
-  height: 60px;
+  height: 10px;
   text-decoration: none;
-  font-size: 18px;
-  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem; /* Adjust the font size as desired */
+  font-family: 'Inconsolata', monospace;
+  transition: all 0.1s ease-in-out;
 
   &:hover {
-    background: #717171;
-    border-left: 4px solid #EAF4F4;
+    color: #202020;
   }
 `;
+
 
 const SidebarLabel = styled.span`
   margin-left: 16px;
 `;
 
 const DropdownLink = styled(Link)`
-  height: 60px;
-  padding-left: 3rem;
+  height: 1.3em;
+  padding-left: 3.5rem;
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #f5f5f5;
+  color: #616161;
+  font-family: 'Inconsolata', monospace;
   font-size: 17px;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out; /* Added transition for opacity and color */
+  font-family: 'Inconsolata', monospace;
+  transition: all 0.1s ease-in-out;
 
   &:hover {
-    color: #717171;
+  color: #202020;
   }
 `;
 
@@ -50,7 +66,8 @@ const SubMenu = ({ item }) => {
 
   return (
     <>
-      <SidebarLink to={item.subNav ? '#' : item.path} onClick={item.subNav ? showSubnav : null}>
+      <GlobalStyle />
+      <SidebarLink to={item.subNav ? '#' : item.path} onClick={item.subNav ? showSubnav : null} hasSubMenu={item.subNav}>
         <div>
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>

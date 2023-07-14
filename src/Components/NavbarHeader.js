@@ -1,14 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import { Link } from 'react-router-dom';
+
+import InconsolataFont from '../font/Inconsolata-Light.ttf';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Inconsolata';
+    src: url(${InconsolataFont});
+  }
+
+  body {
+    margin: 0;
+  }
+`;
 
 const NavbarHeaderContainer = styled.div`
-  background: #353b3c;
+  background: #fff;
   height: 80px;
   width: 250px;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
@@ -17,21 +31,30 @@ const NavbarHeaderContainer = styled.div`
   }
 `;
 
-
-
-
-
-
-const Name = styled.h1`
-  margin-left: 2rem;
-  color: #fff;
+const SmallName = styled.h2`
+  margin-left: 3rem;
+  font-size: 1.2rem; /* Adjust the font size as desired */
+  font-family: 'Inconsolata', monospace;
+  cursor: pointer;
 `;
 
-const NavbarHeader = ({ name }) => {
+const SmallNameSmaller = styled(SmallName)`
+  font-size: 0.9rem; /* Adjust the smaller font size as desired */
+`;
+
+const NavbarHeader = ({ name, secname }) => {
   return (
-    <NavbarHeaderContainer>
-      <Name>{name}</Name>
-    </NavbarHeaderContainer>
+    <>
+      <GlobalStyle />
+      <NavbarHeaderContainer>
+        <div>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <SmallName style={{ color: '#000' }}>{name}</SmallName>
+          </Link>
+          <SmallNameSmaller style={{ color: '#666' }}>{secname}</SmallNameSmaller>
+        </div>
+      </NavbarHeaderContainer>
+    </>
   );
 };
 

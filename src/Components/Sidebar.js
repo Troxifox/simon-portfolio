@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
@@ -7,6 +7,18 @@ import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 import NavbarHeader from './NavbarHeader';
+import InconsolataFont from '../font/Inconsolata-Light.ttf';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Inconsolata';
+    src: url(${InconsolataFont});
+  }
+
+  body {
+    margin: 0;
+  }
+`;
 
 const Nav = styled.div`
   height: 80px;
@@ -29,7 +41,7 @@ const NavIcon = styled(Link)`
 
 
 const SidebarNav = styled.nav`
-  background: #353b3c;
+  background: #fff;
   width: 250px;
   height: calc(100vh - 80px); /* Subtract 80px from the height */
   display: flex;
@@ -92,9 +104,10 @@ const Sidebar = () => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
+      <GlobalStyle />
+      <IconContext.Provider value={{ color: '#000' }}>
         <Nav>
-            <NavbarHeader name="Simon" /> {/* Add NavbarHeader component here */}
+            <NavbarHeader name="simon" secname="bad's production" /> {/* Add NavbarHeader component here */}
           <NavIcon to="#" sidebar={sidebar}>
             <FaIcons.FaBars onClick={showSidebar} style={{ color: 'grey' }} />
           </NavIcon>
