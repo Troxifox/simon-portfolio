@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/simon-portfolio/static/css/main.5f6c8fdb.css",
+    "main.js": "/simon-portfolio/static/js/main.3d3c620e.js",
+    "static/js/787.1ed0c42c.chunk.js": "/simon-portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Inconsolata-Light.ttf": "/simon-portfolio/static/media/Inconsolata-Light.99b842167af10c73c1df.ttf",
+    "index.html": "/simon-portfolio/index.html",
+    "main.5f6c8fdb.css.map": "/simon-portfolio/static/css/main.5f6c8fdb.css.map",
+    "main.3d3c620e.js.map": "/simon-portfolio/static/js/main.3d3c620e.js.map",
+    "787.1ed0c42c.chunk.js.map": "/simon-portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f6c8fdb.css",
+    "static/js/main.3d3c620e.js"
+  ]
+}
