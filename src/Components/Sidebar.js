@@ -93,14 +93,33 @@ const Sidebar = () => {
     }
   }, [windowWidth]);
 
-  const handleItemClick = (event, item) => {
-    if (windowWidth <= 768) {
-      setShouldCloseSidebar(true);
-    }
-    if (item.subMenu) {
-      setSidebar(!sidebar);
-    }
-  };
+const [sidebarVisible, setSidebarVisible] = useState(sidebar);
+
+useEffect(() => {
+  setSidebarVisible(sidebar);
+}, [sidebar]);
+
+const handleItemClick = (event, item) => {
+  if (windowWidth <= 768) {
+    setShouldCloseSidebar(true);
+    setSidebar(false);
+    setSidebarVisible(false);
+  } else if (item.subMenu) {
+    setSidebar(!sidebar);
+    setSidebarVisible(!sidebarVisible);
+  }
+};
+
+
+
+useEffect(() => {
+  if (shouldCloseSidebar) {
+    setSidebarVisible(false); // Close the sidebar
+  }
+}, [shouldCloseSidebar]);
+
+
+
 
   return (
     <>
@@ -121,9 +140,9 @@ const Sidebar = () => {
             )}
             {SidebarData.map((item, index) => (
               <SubMenu
+                onClick={showSidebar} 
                 item={item}
                 key={index}
-                onItemClick={(e) => handleItemClick(e, item)}
               />
             ))}
           </SidebarWrap>
