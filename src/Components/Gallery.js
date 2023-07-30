@@ -11,11 +11,32 @@ const Gallery = ({ images }) => {
     setModel(true);
   };
 
+  const downloadImage = () => {
+    fetch(tempimgSrc)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', `image-${Date.now()}.png`);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      });
+  };
+
   return (
     <>
       <div className={model ? 'model open' : 'model'}>
         <img src={tempimgSrc} alt="Gallery" />
-        <AiIcons.AiOutlineClose onClick={() => setModel(false)} />
+        <div className="icons-container">
+          <div className="download-icon" onClick={downloadImage}>
+            <AiIcons.AiOutlineDownload />
+          </div>
+          <div className="close-icon" onClick={() => setModel(false)}>
+            <AiIcons.AiOutlineClose />
+          </div>
+        </div>
       </div>
       <div className="gallery">
         {images.map((item, index) => {
