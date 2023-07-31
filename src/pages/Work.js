@@ -6,9 +6,15 @@ import TextComponent from '../Components/TextComponent';
 
 export const Work = () => {
   const images = [
-    'https://images.squarespace-cdn.com/content/v1/61a46cc601b4c521a42206d3/1f975b1f-1f2a-4ab2-9e99-5b0e90840571/IMG_4107-min.gif?format=2500w',
+    'https://cdn.myportfolio.com/29242cea-fe3f-4aef-ac1a-364c039f377f/8b7ffdb0-01f7-4cac-b91b-04ffa23ea7dc_rw_1920.jpg?h=43ff0ef611a110b784eda0e5dcf47554',
+    'https://cdn.myportfolio.com/29242cea-fe3f-4aef-ac1a-364c039f377f/8b7ffdb0-01f7-4cac-b91b-04ffa23ea7dc_rw_1920.jpg?h=43ff0ef611a110b784eda0e5dcf47554',
+    'https://cdn.myportfolio.com/29242cea-fe3f-4aef-ac1a-364c039f377f/8b7ffdb0-01f7-4cac-b91b-04ffa23ea7dc_rw_1920.jpg?h=43ff0ef611a110b784eda0e5dcf47554',
+    'https://cdn.myportfolio.com/29242cea-fe3f-4aef-ac1a-364c039f377f/8b7ffdb0-01f7-4cac-b91b-04ffa23ea7dc_rw_1920.jpg?h=43ff0ef611a110b784eda0e5dcf47554',
+    'https://cdn.myportfolio.com/29242cea-fe3f-4aef-ac1a-364c039f377f/8b7ffdb0-01f7-4cac-b91b-04ffa23ea7dc_rw_1920.jpg?h=43ff0ef611a110b784eda0e5dcf47554',
+    'https://cdn.myportfolio.com/29242cea-fe3f-4aef-ac1a-364c039f377f/8b7ffdb0-01f7-4cac-b91b-04ffa23ea7dc_rw_1920.jpg?h=43ff0ef611a110b784eda0e5dcf47554',
     'https://images.squarespace-cdn.com/content/v1/61a46cc601b4c521a42206d3/594e7871-c870-49b5-9050-d1e946f428d6/IMG_4546-min.gif?format=2500w',
     'https://images.squarespace-cdn.com/content/v1/61a46cc601b4c521a42206d3/1f975b1f-1f2a-4ab2-9e99-5b0e90840571/IMG_4107-min.gif?format=2500w',
+'https://lightroom.adobe.com/v2c/spaces/4ff13fb1a9e844c9a9fd2e141c3d3abf/assets/8bde42e5f97acc64e73d791cf51c421b/revisions/ca93f8e778663a81dd9eb2d37e99c501/renditions/d3abcbceed4e58bb5dd6e4da77455dc6',
   ];
 
   return (

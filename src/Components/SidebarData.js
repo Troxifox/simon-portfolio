@@ -32,5 +32,5 @@ export const SidebarData = [
             path: '/works/works3',
         },
     ]
-},
+    },
 ]

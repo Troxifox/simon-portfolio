@@ -1,4 +1,3 @@
-/* Gallery.css */
 
 .gallery {
   -webkit-column-count: 3;
@@ -97,5 +96,5 @@
 }
 
 .close-icon {
-  margin-right: 0; /* Remove the right margin for the close icon to separate them properly */
+  margin-right: 0;
 }

@@ -14,10 +14,8 @@ const VideoWrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  /* Apply responsive styles only when width is greater than or equal to 768px */
   @media (min-width: 768px) {
-    /* You can adjust the min-width value as per your requirements */
-    padding-top: 56.25%; /* This maintains a 16:9 aspect ratio for the video */
+    padding-top: 56.25%;
     iframe {
       position: absolute;
       top: 0;

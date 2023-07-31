@@ -20,11 +20,11 @@ const SidebarLink = styled(Link)`
   justify-content: space-between;
   margin-left: 2rem;
   align-items: center;
-  padding: ${({ hasSubMenu }) => (hasSubMenu ? '2em 0.5em 1em 0.5em' : '0.5em')}; /* Add top padding if hasSubMenu is true */
+  padding: ${({ hasSubMenu }) => (hasSubMenu ? '2em 0.5em 1em 0.5em' : '0.5em')};
   list-style: none;
   height: 10px;
   text-decoration: none;
-  font-size: 1.2rem; /* Adjust the font size as desired */
+  font-size: 1.2rem;
   font-family: 'Inconsolata', monospace;
   transition: all 0.1s ease-in-out;
 
@@ -56,13 +56,10 @@ const DropdownLink = styled(Link)`
   }
 `;
 
-
-const SubMenu = ({ item }) => {
+  const SubMenu = ({ item, closeSubmenu }) => {
   const [subnav, setSubnav] = useState(false);
 
   const showSubnav = () => setSubnav(!subnav);
-
-  const closeSubmenu = () => setSubnav(false);
 
   return (
     <>
@@ -75,12 +72,13 @@ const SubMenu = ({ item }) => {
         <div>{item.subNav && subnav ? item.iconOpened : item.subNav ? item.iconClosed : null}</div>
       </SidebarLink>
       <div>
-        {item.subNav && (
+        {item.subNav && subnav && (
           item.subNav.map((subItem, index) => (
             <DropdownLink
               to={subItem.path}
               key={index}
               isOpen={subnav}
+              onClick={closeSubmenu}
             >
               {subItem.icon}
               <SidebarLabel>{subItem.title}</SidebarLabel>

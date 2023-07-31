@@ -33,13 +33,13 @@ const NavbarHeaderContainer = styled.div`
 
 const SmallName = styled.h2`
   margin-left: 3rem;
-  font-size: 1.2rem; /* Adjust the font size as desired */
+  font-size: 1.2rem;
   font-family: 'Inconsolata', monospace;
   cursor: pointer;
 `;
 
 const SmallNameSmaller = styled(SmallName)`
-  font-size: 0.9rem; /* Adjust the smaller font size as desired */
+  font-size: 0.9rem;
 `;
 
 const NavbarHeader = ({ name, secname }) => {

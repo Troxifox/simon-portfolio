@@ -8,6 +8,7 @@ import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 import NavbarHeader from './NavbarHeader';
 import InconsolataFont from '../font/Inconsolata-Light.ttf';
+import SocialIconContainer from './SocialIconContainer';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -28,8 +29,8 @@ const Nav = styled.div`
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: auto; /* Added margin-left: auto to push the icon to the right */
-  margin-right: 1rem; /* Added margin-right: 1rem to move the icon slightly to the left */
+  margin-left: auto;
+  margin-right: 1rem;
   font-size: 2rem;
   height: 80px;
   display: flex;
@@ -43,11 +44,11 @@ const NavIcon = styled(Link)`
 const SidebarNav = styled.nav`
   background: #fff;
   width: 250px;
-  height: calc(100vh - 80px); /* Subtract 80px from the height */
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 80px; /* Updated to 80px */
+  top: 80px;
   left: ${({ sidebar }) => (sidebar ? '0' : '-250px')};
   transition: left 0.3s ease-in-out;
   z-index: 10;
@@ -118,38 +119,36 @@ useEffect(() => {
   }
 }, [shouldCloseSidebar]);
 
-
-
-
-  return (
-    <>
-      <GlobalStyle />
-      <IconContext.Provider value={{ color: '#000' }}>
-        <Nav>
-            <NavbarHeader name="simon" secname="bad's production" /> {/* Add NavbarHeader component here */}
-          <NavIcon to="#" sidebar={sidebar}>
-            <FaIcons.FaBars onClick={showSidebar} style={{ color: 'grey' }} />
-          </NavIcon>
-        </Nav>
-        <SidebarNav sidebar={sidebar || windowWidth > 768} shouldCloseSidebar={shouldCloseSidebar}>
-          <SidebarWrap>
-            {windowWidth <= 768 && (
-              <NavIcon to="#">
-                <AiIcons.AiOutlineClose onClick={showSidebar} />
-              </NavIcon>
-            )}
-            {SidebarData.map((item, index) => (
-              <SubMenu
-                onClick={showSidebar} 
-                item={item}
-                key={index}
-              />
-            ))}
-          </SidebarWrap>
-        </SidebarNav>
-      </IconContext.Provider>
-    </>
-  );
+return (
+  <>
+    <GlobalStyle />
+    <IconContext.Provider value={{ color: '#000' }}>
+      <Nav>
+        <NavbarHeader name="simon" secname="bad's production" />
+        <NavIcon to="#" sidebar={sidebar}>
+          <FaIcons.FaBars onClick={showSidebar} style={{ color: 'grey' }} />
+        </NavIcon>
+      </Nav>
+      <SidebarNav sidebar={sidebar || windowWidth > 768} shouldCloseSidebar={shouldCloseSidebar}>
+        <SidebarWrap>
+          {windowWidth <= 768 && (
+            <NavIcon to="#">
+              <AiIcons.AiOutlineClose onClick={showSidebar} />
+            </NavIcon>
+          )}
+          {SidebarData.map((item, index) => (
+            <SubMenu
+              onClick={showSidebar} 
+              item={item}
+              key={index}
+            />
+          ))}
+          <SocialIconContainer />
+        </SidebarWrap>
+      </SidebarNav>
+    </IconContext.Provider>
+  </>
+);
 };
 
 export default Sidebar;
